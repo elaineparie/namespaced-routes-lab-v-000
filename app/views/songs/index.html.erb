@@ -1,7 +1,7 @@
 <ul>
-  <%if @songs.song_sort_order == "ASC"%>
+  <%if @songs.preferences.song_sort_order == "ASC"%>
   <%@songs = @songs.order('name ASC')%>
-  <%elsif @songs.song_sort_order == "DESC"%>
+  <%elsif @songs.preferences.song_sort_order == "DESC"%>
     <%@songs = @songs.order('name DESC')%>
     <%end%>
 
