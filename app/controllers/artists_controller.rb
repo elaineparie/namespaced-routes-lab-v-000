@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
     if Preference.all.first.artist_sort_order
+      if Preference.all.first.artist_sort_order == "ASC"
 
       @artists = @artists.order('name ASC')
     end
