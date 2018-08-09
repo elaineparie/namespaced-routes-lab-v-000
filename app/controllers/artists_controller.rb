@@ -4,6 +4,8 @@ class ArtistsController < ApplicationController
     if !Preference.all.empty?
       if Preference.all.first.artist_sort_order == "ASC"
       @artists = @artists.order('name ASC')
+    elsif Preference.all.first.artist_sort_order == "DESC"
+      @artists = @artists.order('name DESC')
     end
     end
   end
