@@ -1,8 +1,10 @@
 class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
-    if Preference.all.first.artist_sort_order == "ASC"
+    if Preference.all.first.artist_sort_order
+
       @artists = @artists.order('name ASC')
+    end
       end
   end
 
@@ -12,7 +14,6 @@ class ArtistsController < ApplicationController
 
   def new
     if Preference.all.first.allow_create_artists
-  binding.pry
     @artist = Artist.new
   else
     redirect_to artists_path
