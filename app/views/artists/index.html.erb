@@ -1,5 +1,8 @@
 <h1>Artists</h1>
 <ul>
+  <%if Preference.all.first.artist_sort_order == "ASC"%>
+    <%@artists = @artists.order('name ASC') %>
+    <%end%>
   <% @artists.each do |artist| %>
     <li><%= link_to artist.name, artist_songs_path(artist) %></li>
   <% end %>
