@@ -12,6 +12,7 @@ class ArtistsController < ApplicationController
 
   def new
     if Preference.all.first.allow_create_artists
+  binding.pry
     @artist = Artist.new
   else
     redirect_to artists_path
