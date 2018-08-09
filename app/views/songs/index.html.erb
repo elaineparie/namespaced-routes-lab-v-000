@@ -4,7 +4,7 @@
   <%elsif @songs.song_sort_order == "DESC"%>
     <%@songs = @songs.order('name DESC')%>
     <%end%>
-    
+
 <% @songs.each do |song| %>
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
 <% end %>
