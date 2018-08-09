@@ -12,6 +12,7 @@ class ArtistsController < ApplicationController
   end
 
   def new
+    binding.pry
     if Preference.all.first.allow_create_artists
     @artist = Artist.new
   else
