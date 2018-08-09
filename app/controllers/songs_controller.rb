@@ -25,7 +25,7 @@ class SongsController < ApplicationController
   end
 
   def new
-    if Preference.first.song_sort_by == 'ASC'
+  #  if Preference.all.allow_create_songs
     @song = Song.new
   end
 
