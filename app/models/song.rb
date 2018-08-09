@@ -1,5 +1,6 @@
 class Song < ActiveRecord::Base
   belongs_to :artist
+  has_many :preferences
 
   def artist_name
     self.try(:artist).try(:name)
