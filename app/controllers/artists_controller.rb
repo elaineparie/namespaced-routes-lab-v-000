@@ -4,7 +4,6 @@ class ArtistsController < ApplicationController
     if Preference.all.first.artist_sort_order != nil && Preference.all.first.artist_sort_order == "ASC"
       @artists = @artists.order('name ASC')
     end
-    end
   end
 
   def show
