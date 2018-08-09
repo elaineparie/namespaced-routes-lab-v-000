@@ -25,6 +25,7 @@ class SongsController < ApplicationController
   end
 
   def new
+    if 
     @song = Song.new
   end
 
