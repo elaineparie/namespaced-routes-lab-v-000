@@ -1,5 +1,6 @@
 <ul>
   <%if @songs.song_sort_order == "ASC"%>
+  <%@songs.order('name ASC')
 <% @songs.each do |song| %>
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
 <% end %>
