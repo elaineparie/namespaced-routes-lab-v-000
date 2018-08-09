@@ -6,7 +6,6 @@ class ArtistsController < ApplicationController
       @artists = @artists.order('name ASC')
     end
     end
-      end
   end
 
   def show
