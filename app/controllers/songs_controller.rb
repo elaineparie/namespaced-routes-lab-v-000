@@ -25,7 +25,7 @@ class SongsController < ApplicationController
   end
 
   def new
-    if 
+    if Preference.first.song_sort_by == 'ASC'
     @song = Song.new
   end
 
