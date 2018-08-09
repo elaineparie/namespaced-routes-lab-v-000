@@ -1,6 +1,5 @@
 class ArtistsController < ApplicationController
   def index
-    binding.pry
     @artists = Artist.all
     if Preference.all.first.artist_sort_order != nil && Preference.all.first.artist_sort_order == "ASC"
       @artists = @artists.order('name ASC')
@@ -12,6 +11,7 @@ class ArtistsController < ApplicationController
   end
 
   def new
+    binding.pry
     if Preference.all.first.allow_create_artists
     @artist = Artist.new
   else
